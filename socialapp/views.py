@@ -25,8 +25,6 @@ def product_list(request):
         products = data.get('content', [])
         total_elements = response.json().get("totalElements", 0)
         total_pages = math.ceil(total_elements / PAGE_SIZE)
-        print("total_elements", total_elements)
-        print("PAGE_SIZE", PAGE_SIZE)
     except Exception as e:
         products = []
         print("Error fetching products:", e)
