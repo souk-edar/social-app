@@ -20,6 +20,12 @@ Then, install dependencies with
 pip install -r requirements.txt
 ```
 
+### Activate venv
+
+```
+source .venv/bin/activate
+```
+
 ### Run Django server
 
 ```
