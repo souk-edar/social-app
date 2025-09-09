@@ -1,6 +1,7 @@
 import asyncio
 import os
 import math
+import glob
 import requests
 from playwright.async_api import async_playwright
 from dotenv import load_dotenv
@@ -39,7 +40,27 @@ async def capture_screenshot(playwright, url: str, filename: str):
     print(f"✅ Screenshot saved: {save_path}")
     await browser.close()
 
+def clear_existing_screenshots():
+    if os.path.exists(OUTPUT_DIR):
+        image_patterns = ['*.png', '*.jpg', '*.jpeg', '*.gif', '*.bmp', '*.webp']
+        deleted_count = 0
+        
+        for pattern in image_patterns:
+            files = glob.glob(os.path.join(OUTPUT_DIR, pattern))
+            for file_path in files:
+                try:
+                    os.remove(file_path)
+                    print(f"✅ Deleted: {file_path}")
+                    deleted_count += 1
+                except OSError as e:
+                    print(f"Error deleting {file_path}: {e}")
+        
+        if deleted_count > 0:
+            print(f"Cleared {deleted_count} existing screenshot(s)")
+
 async def main():
+    clear_existing_screenshots()
+    
     total_pages = get_total_pages()
 
     async with async_playwright() as playwright:

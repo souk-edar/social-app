@@ -5,10 +5,10 @@
 Spin up a new .venv first if you want
 
 ```
-python3 -m venv .venv  
+python -m venv .venv  
 ```
 
-Activate it
+Activate your venv
 
 ```
 source .venv/bin/activate
@@ -20,14 +20,14 @@ Then, install dependencies with
 pip install -r requirements.txt
 ```
 
-### Activate venv
-
-```
-source .venv/bin/activate
-```
-
 ### Run Django server
 
 ```
 python manage.py runserver
+```
+
+### Run screenshot capture script
+
+```
+python screenshot_capture.py
 ```
