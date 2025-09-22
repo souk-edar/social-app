@@ -34,7 +34,7 @@ async def capture_screenshot(playwright, url: str, filename: str):
     )
     page = await context.new_page()
     await page.goto(url)
-    await page.wait_for_timeout(3000)
+    await page.wait_for_timeout(1000)
 
     await page.screenshot(path=save_path, full_page=False)
     print(f"✅ Screenshot saved: {save_path}")
