@@ -20,7 +20,7 @@ Then, install dependencies with
 pip install -r requirements.txt
 ```
 
-### Run server
+### Start the server
 
 ```
 python manage.py runserver
