@@ -1,5 +1,7 @@
 # social-app
 
+Take screenshots to post on social media like Instagram 
+
 ## Getting started
 
 Create a Virtual Environnement (venv), if one is not already available 
