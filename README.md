@@ -2,7 +2,7 @@
 
 ## Getting started
 
-Spin up a new .venv first if you want
+Create a Virtual Environnement (venv), if one is not already available 
 
 ```
 python -m venv .venv  
@@ -14,7 +14,7 @@ Activate your venv
 source .venv/bin/activate
 ```
 
-Then, install dependencies with
+Then, install project dependencies
 
 ```
 pip install -r requirements.txt
